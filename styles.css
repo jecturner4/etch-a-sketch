@@ -1,0 +1,57 @@
+/* Genereal page styling */
+* {
+  background-color: white;
+}
+
+.pageTitle {
+  display: flex;
+  justify-content: center;
+}
+
+#inputText {
+  display: flex;
+  justify-content: center;
+}
+
+#boxInput {
+  margin-left: 10px;
+  width: 75px;
+}
+
+#submitButton {
+  margin-left: 10px;
+}
+
+#warningText {
+  display: flex;
+  justify-content: center;
+}
+/* Game conatiner styling */
+.containerForGame {
+  height: 600px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex: 1;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.column {
+  display: flex;
+  flex: 1;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.colorSelection {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
