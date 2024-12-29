@@ -6,6 +6,12 @@ let inputNum = 10;
 let inputField;
 let row;
 let column;
+// radio button variables
+const blackButton = document.getElementById("black");
+const blueButton = document.getElementById("blue");
+const redButton = document.getElementById("red");
+const rainbowButton = document.getElementById("rainbow");
+const shadingButton = document.getElementById("shading");
 
 //EVENT LISTENERS
 // adds guiding text to number input selection
@@ -25,6 +31,7 @@ function gridOnPageLoad() {
       row.appendChild(column);
     }
   }
+  draw();
 }
 
 //Function to clear grid from page load and then re-create new grade base on user input
@@ -51,12 +58,33 @@ function newGrid() {
       }
     }
   }
-}
 
+  draw();
+}
 // function to add guiding text to number input selection
 function addGuidingText() {
   document.getElementById("warningText").innerHTML =
     "Choose any number between 2 and 99!";
+}
+
+blackButton.addEventListener("click", draw);
+blueButton.addEventListener("click", draw);
+redButton.addEventListener("click", draw);
+rainbowButton.addEventListener("click", draw);
+shadingButton.addEventListener("click", draw);
+//Draw function
+function draw() {
+  if (blackButton.checked) {
+    console.log("black is selected");
+  } else if (blueButton.checked) {
+    console.log("blue is selected");
+  } else if (redButton.checked) {
+    console.log("red is selected");
+  } else if (rainbowButton.checked) {
+    console.log("rainbow is selected");
+  } else if (shadingButton.checked) {
+    console.log("shading is selected");
+  }
 }
 
 //FUNCTION CALLS
