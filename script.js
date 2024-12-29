@@ -1,17 +1,21 @@
 //VARIABLES
 //create variable for game container
 let containerDiv = document.querySelector(".containerForGame");
+let myColumn = document.querySelectorAll(".column");
 // default number of grids (if no user input detected or beg of game)
 let inputNum = 10;
 let inputField;
 let row;
 let column;
 // radio button variables
-const blackButton = document.getElementById("black");
-const blueButton = document.getElementById("blue");
-const redButton = document.getElementById("red");
-const rainbowButton = document.getElementById("rainbow");
-const shadingButton = document.getElementById("shading");
+let blackButton = document.getElementById("black");
+let blueButton = document.getElementById("blue");
+let redButton = document.getElementById("red");
+let rainbowButton = document.getElementById("rainbow");
+// clear button
+let clearButton = document.getElementById("clear");
+
+clearButton.addEventListener("click", newGrid);
 
 //EVENT LISTENERS
 // adds guiding text to number input selection
@@ -71,21 +75,26 @@ blackButton.addEventListener("click", draw);
 blueButton.addEventListener("click", draw);
 redButton.addEventListener("click", draw);
 rainbowButton.addEventListener("click", draw);
-shadingButton.addEventListener("click", draw);
+
 //Draw function
 function draw() {
-  if (blackButton.checked) {
-    console.log("black is selected");
-  } else if (blueButton.checked) {
-    console.log("blue is selected");
-  } else if (redButton.checked) {
-    console.log("red is selected");
-  } else if (rainbowButton.checked) {
-    console.log("rainbow is selected");
-  } else if (shadingButton.checked) {
-    console.log("shading is selected");
+  let columns = document.getElementsByClassName("column");
+  for (let m = 0; m < columns.length; m++) {
+    columns[m].addEventListener("mouseover", changeColor);
+  }
+  function changeColor() {
+    // radio button variables
+    if (blackButton.checked) {
+      this.style.backgroundColor = "black";
+    } else if (blueButton.checked) {
+      this.style.backgroundColor = "blue";
+    } else if (redButton.checked) {
+      this.style.backgroundColor = "red";
+    } else if (rainbowButton.checked) {
+      let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+      this.style.backgroundColor = "#" + randomColor;
+    }
   }
 }
-
 //FUNCTION CALLS
 gridOnPageLoad();

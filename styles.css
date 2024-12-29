@@ -28,6 +28,7 @@
 }
 /* Game conatiner styling */
 .containerForGame {
+  background-color: white;
   height: 600px;
   width: 600px;
   display: flex;
@@ -48,10 +49,18 @@
   flex: 1;
   border: 1px solid black;
   box-sizing: border-box;
+  opacity: 100;
 }
 
 .colorSelection {
   display: flex;
   gap: 15px;
   justify-content: center;
+}
+
+#clear {
+  display: flex;
+  margin-top: 5vh;
+  margin-left: auto;
+  margin-right: auto;
 }
